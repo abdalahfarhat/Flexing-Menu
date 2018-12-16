@@ -5,6 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Flexing Menu</title>
+    <style>
+      body {
+        font-family: tahoma;
+        margin: 0;
+        padding: 0;
+      }
+      .flexing {
+        display: flex;
+        height: 100vh;
+      }
+
+      .flexing .section {
+        flex: 1;
+        position: relative;
+        cursor: pointer;
+        transition: 0.5s ease;
+      }
+      .flexing .section-yellow {
+        background-color: yellow;
+      }
+      .flexing .section-pink {
+        background-color: pink;
+      }
+      .flexing .section-green {
+        background-color: green;
+      }
+      .flexing .section:hover {
+        flex: 3;
+      }
+      .flexing .section:hover h3 {
+        transform: translate(-50%, -50%) rotate(0);
+      }
+      @media (max-width: 720px) {
+        .flexing {
+          flex-flow: column;
+        }
+      }
+        @media (max-width: 720px) {
+          .flexing .section:hover h3 {
+            transform: translate(-50%, -50%) scale(1);
+          }
+        }
+        .flexing .section h3 {
+          transform: translate(-50%, -50%) rotate(90deg);
+          font-size: 45px;
+          font-family: tahoma;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          margin: 0;
+          transition: 0.5s ease;
+        }
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <div class="flexing">
+      <div class="section section-yellow"><h3>HOME</h3></div>
+
+      <div class="section section-pink"><h3>ABOUT</h3></div>
+
+      <div class="section section-green"><h3>GALLERY</h3></div>
+    </div>
+  </body>
 </html>
